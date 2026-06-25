@@ -3,7 +3,11 @@ const dao = require('./CorporateDbDAO')
 const {validate,rbac,jwtValidate} = require('./Middleware')
 // Routers for DB operations
 
-router.get('/pack/:salary',)
+router.get('/pack/:salary',jwtValidate,rbac(['student']),async(req,res)=>{
+    const result = await dao.filterByPackage(req.params.salary)
+    if(result) res.json(result)
+    else res.status(400).json({"error":"No matches on package"})
+})
 
 // router.get('/all',validate,rbac(['coordinator','manager','student']),async(req,res)=>{
 router.get('/all',jwtValidate,rbac(['coordinator','manager','student']),async(req,res)=>{

@@ -32,10 +32,12 @@ const removeCampus = async(company) => {
         return null
     }
 }
+
 const filterByPackage = async(package) => {
-    try
-    {
-        await corp.findOne({"package":{$gte:"package"}})
+    try{
+        const result = await corp.findOne({"package":{$gte:package}})
+        return result
     }catch(err){return null}
 }
-module.exports = {viewCampus, scheduleCampus, editCampus, removeCampus}
+
+module.exports = {viewCampus, scheduleCampus, editCampus, removeCampus, filterByPackage}
