@@ -1,12 +1,12 @@
-@api = http://localhost:3000
+@api = https://fdp-hcl-suman.onrender.com
 
 POST {{api}}/auth/register
 Content-Type: application/json
 
 {
-    "username":"sunitha",
+    "username":"sudhir",
     "password":"lasrado",
-    "role":"student",
+    "role":"manager",
     "contact":4567654567
 }
 
@@ -46,16 +46,16 @@ POST {{api}}/auth/login
 Content-Type: application/json
 
 {
-    "username":"sunitha",
+    "username":"sudhir",
     "password":"lasrado"
 }
 
 ###
 GET {{api}}/api/all
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhemFrIiwiaWF0IjoxNzgyMzY2Njg0LCJleHAiOjE3ODIzNzAyODR9.hPpXEKHpeuKIW_CxVxA_IztxsLh68GLy6C8cffgGtNU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1bml0aGEiLCJpYXQiOjE3ODIzNzk4MDIsImV4cCI6MTc4MjM4MzQwMn0.G_5wet9InaSkV-_sY3eQ_elh2Yp7QdXKgfYxAm89M2o
 ### manager, coordinator
 POST {{api}}/api/book
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhemFrIiwiaWF0IjoxNzgyMjk3OTAyLCJleHAiOjE3ODIzMDE1MDJ9.J5nq-NP7omE5RfcpVT-M_pBhEa2zgoLVU5zAJSRBcfI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN1ZGhpciIsImlhdCI6MTc4MjM3OTg5MSwiZXhwIjoxNzgyMzgzNDkxfQ._ZUx_NWVIJrcqLLfhkgLlt27pPg7OLei7Zbbp6-w9Mg
 Content-Type: application/json
 
 {

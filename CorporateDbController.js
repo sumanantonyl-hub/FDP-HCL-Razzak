@@ -3,6 +3,8 @@ const dao = require('./CorporateDbDAO')
 const {validate,rbac,jwtValidate} = require('./Middleware')
 // Routers for DB operations
 
+router.get('/pack/:salary',)
+
 // router.get('/all',validate,rbac(['coordinator','manager','student']),async(req,res)=>{
 router.get('/all',jwtValidate,rbac(['coordinator','manager','student']),async(req,res)=>{
     const fetched = await dao.viewCampus()
