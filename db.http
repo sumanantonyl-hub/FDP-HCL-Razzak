@@ -1,11 +1,11 @@
-@api = http://localhost:2222
+@api = http://localhost:3000
 
 POST {{api}}/auth/register
 Content-Type: application/json
 
 {
-    "username":"manikandan",
-    "password":"mani",
+    "username":"sunitha",
+    "password":"lasrado",
     "role":"student",
     "contact":4567654567
 }
@@ -46,8 +46,8 @@ POST {{api}}/auth/login
 Content-Type: application/json
 
 {
-    "username":"razak",
-    "password":"mohamed"
+    "username":"sunitha",
+    "password":"lasrado"
 }
 
 ###
