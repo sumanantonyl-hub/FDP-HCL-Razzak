@@ -1,0 +1,81 @@
+@api = http://localhost:2222
+
+POST {{api}}/auth/register
+Content-Type: application/json
+
+{
+    "username":"manikandan",
+    "password":"mani",
+    "role":"student",
+    "contact":4567654567
+}
+
+### student, cooradinator, manager
+GET {{api}}/api/all
+Authorization: Basic razak:mohamed
+
+### manager, coordinator
+POST {{api}}/api/book
+Authorization: Basic razak:mohamed
+Content-Type: application/json
+
+{
+    "corporate":"Open AI",
+    "date":"2026-05-25",
+    "role":"AI Product Manager",
+    "package":84.2,
+    "count":1
+}
+
+### manager
+PATCH {{api}}/api/edit/TietoEvry
+Authorization: Basic rasheedha:mohamed
+Content-Type: application/json
+
+{
+    "package":15.5,
+    "count":3
+}
+
+### manager
+DELETE {{api}}/api/del/TietoEvry
+Authorization: Basic rasheedha:mohamed
+
+### JWT authentication
+POST {{api}}/auth/login
+Content-Type: application/json
+
+{
+    "username":"razak",
+    "password":"mohamed"
+}
+
+###
+GET {{api}}/api/all
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhemFrIiwiaWF0IjoxNzgyMzY2Njg0LCJleHAiOjE3ODIzNzAyODR9.hPpXEKHpeuKIW_CxVxA_IztxsLh68GLy6C8cffgGtNU
+### manager, coordinator
+POST {{api}}/api/book
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhemFrIiwiaWF0IjoxNzgyMjk3OTAyLCJleHAiOjE3ODIzMDE1MDJ9.J5nq-NP7omE5RfcpVT-M_pBhEa2zgoLVU5zAJSRBcfI
+Content-Type: application/json
+
+{
+    "corporate":"Anthropic",
+    "date":"2026-05-25",
+    "role":"AI Product Manager",
+    "package":84.2,
+    "count":1
+}
+
+### manager
+PATCH {{api}}/api/edit/TietoEvry
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhYmFyaSIsImlhdCI6MTc4MjI5NzcwMCwiZXhwIjoxNzgyMzAxMzAwfQ.M4ah64y-YJeHeM7m5baNQGbWzxM-UQRn_Gd3eD5HbI4
+Content-Type: application/json
+
+{
+    "package":15.5,
+    "count":3
+}
+
+### manager
+DELETE {{api}}/api/del/TietoEvry
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhYmFyaSIsImlhdCI6MTc4MjI5NzcwMCwiZXhwIjoxNzgyMzAxMzAwfQ.M4ah64y-YJeHeM7m5baNQGbWzxM-UQRn_Gd3eD5HbI4
